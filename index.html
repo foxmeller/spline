@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Draw natural cube spline</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body onload="main()">
+    <div class="canvas">
+        <p style="text-align: center; margin:0; padding:0">Click points here:</p>
+    <canvas id="webgl" width="800" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+    </div>
+    <div class="parameters">
+    <fieldset>
+        <legend>Control point parameters</legend>
+        <div><label for="chkCtrPts"> Draw points:</label>
+        <input type="checkbox" id="chkCtrPts" checked></div>
+        <div><label for="chkBrokenLine"> Broken line:</label>
+        <input type="checkbox" id="chkBrokenLine"></div>
+    </fieldset>
+    <fieldset>
+        <legend>Spline parameters</legend>
+        <div><label for="chkLineSpline"> Natural cube spline:</label>
+        <input type="checkbox" id="chkLineSpline"></div>
+        <fieldset>
+            <legend>Boundary condition type</legend>
+            <div><label for="leftBC"> left:</label>
+            <input type="text" id="leftBC" value="2" maxlength="1" size="1"></div>
+            <div><label for="rightBC"> right:</label>
+            <input type="text" id="rightBC" value="2" maxlength="1" size="1"></div>
+        </fieldset>
+        <div><label for="countSplinePoints"> Count spline points:</label>
+        <input type="text" id="countSplinePoints" value="10" maxlength="3" size="3"></div>
+        <fieldset>
+            <legend>Initialize Parametric Coordinate</legend>
+            <div><label for="uniformParam"> uniform:</label>
+            <input type="radio" name="paramCoord" id="uniformParam" checked></div>
+            <div><label for="distanceParam"> distance:</label>
+            <input type="radio" name="paramCoord" id="distanceParam"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Visualize with</legend>
+            <div><label for="chkVisualizeWithPoints"> points:</label>
+            <input type="checkbox" id="chkVisualizeWithPoints" checked></div>
+            <div><label for="chkVisualizeWithLine"> line:</label>
+            <input type="checkbox" id="chkVisualizeWithLine"></div>
+        </fieldset>
+    </fieldset>
+    </div>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/gl-matrix-min.js"></script>
+    <script src="lib/EventUtil.js"></script>
+    <script src="js/3.js"></script>
+  </body>
+</html>
