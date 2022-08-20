@@ -98,7 +98,7 @@ function main() {
 
 function Point(x,y) {
     this.select = false;
-    // ƒќЅј¬»“№ ѕј–јћ≈“–»„≈— ”ё  ќќ–ƒ»Ќј“” t
+    // –Ф–Ю–С–Р–Т–Ш–Ґ–ђ –Я–Р–†–Р–Ь–Х–Ґ–†–Ш–І–Х–°–Ъ–£–Ѓ –Ъ–Ю–Ю–†–Ф–Ш–Э–Р–Ґ–£ t
     this.t = 0;
     this.x = x;
     this.y = y;
@@ -715,7 +715,7 @@ var Data = {
         var m0;//
         var mN;
         var sum=0;
-        // расчет координат векторов первых или вторых производных
+        // —А–∞—Б—З–µ—В –Ї–Њ–Њ—А–і–Є–љ–∞—В –≤–µ–Ї—В–Њ—А–Њ–≤ –њ–µ—А–≤—Л—Е –Є–ї–Є –≤—В–Њ—А—Л—Е –њ—А–Њ–Є–Ј–≤–Њ–і–љ—Л—Е
 
         if ((this.leftBC.value == 1) || (this.leftBC.value == 2)) {
             x = this.mPointsCtr[0].x - this.pointsCtr[0].x;
@@ -738,7 +738,7 @@ var Data = {
          console.log(m0.y);
          console.log(mN.x);
          console.log(mN.y);
-        // –ј——„»“ј“№ «Ќј„≈Ќ»≈ ѕј–јћ≈“–»„≈— »’  ќќ–ƒ»Ќј“  ќЌ“–ќЋ№Ќџ’ “ќ„≈ //////////////////////////////////////////////как в 3
+        // –†–Р–°–°–І–Ш–Ґ–Р–Ґ–ђ –Ч–Э–Р–І–Х–Э–Ш–Х –Я–Р–†–Р–Ь–Х–Ґ–†–Ш–І–Х–°–Ъ–Ш–• –Ъ–Ю–Ю–†–Ф–Ш–Э–Р–Ґ –Ъ–Ю–Э–Ґ–†–Ю–Ы–ђ–Э–Ђ–• –Ґ–Ю–І–Х–Ъ//////////////////////////////////////////////–Ї–∞–Ї –≤ 3
 	this.pointsCtr[0].t=0;
 	for (i = 1; i < this.pointsCtr.length;i++)
 	{
@@ -768,17 +768,17 @@ var Data = {
 
        
        var LEN = this.pointsCtr.length-1;
-        // –ј—„≈“  ќќ–ƒ»Ќј“ “ќ„ » —ѕЋј…Ќј
+        // –†–Р–°–І–Х–Ґ –Ъ–Ю–Ю–†–Ф–Ш–Э–Р–Ґ –Ґ–Ю–І–Ъ–Ш –°–Я–Ы–Р–Щ–Э–Р
         var i=0;
        var t=this.pointsCtr[0].t;
-        var dt = (this.pointsCtr[this.pointsCtr.length-1].t-this.pointsCtr[0].t)/N;//шаг по т 
+        var dt = (this.pointsCtr[this.pointsCtr.length-1].t-this.pointsCtr[0].t)/N;//—И–∞–≥ –њ–Њ —В 
         var h =[];
         var a= [];
         var b= [];
         var c =[];
         var d =[];
         var dy=[];
-        ///////////////////////////////////«јѕќЋЌ≈Ќ»≈ ћј——»¬ќ¬ ƒЋя ѕ–ќ√ќЌ »/////////////////////////////\
+        ///////////////////////////////////–Ч–Р–Я–Ю–Ы–Э–Х–Э–Ш–Х –Ь–Р–°–°–Ш–Т–Ю–Т –Ф–Ы–ѓ –Я–†–Ю–У–Ю–Э–Ъ–Ш/////////////////////////////\
        // var a =b=d=c= [];
         h[0]=this.pointsCtr[1].t-this.pointsCtr[0].t;
         h[LEN-1]=this.pointsCtr[LEN].t-this.pointsCtr[LEN-1].t;
@@ -808,12 +808,12 @@ var Data = {
             dy[i]=6*(((this.pointsCtr[i+1].y-this.pointsCtr[i].y)/h[i])-((this.pointsCtr[i].y-this.pointsCtr[i-1].y)/h[i-1]));
             }
         }
-        //////////////////////////ѕрогонка////////////////////////////////
+        //////////////////////////–Я—А–Њ–≥–Њ–љ–Ї–∞////////////////////////////////
         var alf=[];
         var bet=[];
         var betY=[];
         var gam=[];
-        var i =0;/////////ѕр€мой ход
+        var i =0;/////////–Я—А—П–Љ–Њ–є —Е–Њ–і
         gam[0]=b[0];
         alf[0]=-c[0]/gam[0];
         bet[0]=d[0]/gam[0];
@@ -831,7 +831,7 @@ var Data = {
         betY[i]=(dy[i]-a[i]*betY[i-1])/gam[i];
         var Mx=[];
         var My=[];
-        Mx[LEN]=bet[LEN];///////////////////////////ќбратный
+        Mx[LEN]=bet[LEN];///////////////////////////–Ю–±—А–∞—В–љ—Л–є
          My[LEN]=betY[LEN];
         for (var i=LEN-1;i!=-1;i--)
         {
@@ -854,7 +854,7 @@ var Data = {
                 y=y+My[i+1]*((t-this.pointsCtr[i].t)**3)/(6*h[i]);
                 y=y+(this.pointsCtr[i].y-My[i]*((h[i])**2)/6)*(this.pointsCtr[i+1].t-t)/h[i];
                 y=y+(this.pointsCtr[i+1].y-My[i+1]*((h[i])**2)/6)*(t-this.pointsCtr[i].t)/h[i];
-                  //////////////////////////////////////ѕроизводные//////////////////////////////////////////////////////////////////
+                  //////////////////////////////////////–Я—А–Њ–Є–Ј–≤–Њ–і–љ—Л–µ//////////////////////////////////////////////////////////////////
                 prx1=-Mx[i]*((this.pointsCtr[i+1].t-t)**2)/(2*h[i])+Mx[i+1]*((t-this.pointsCtr[i].t)**2)/(2*h[i])-(this.pointsCtr[i].x/h[i]-Mx[i]*h[i]/6)+(this.pointsCtr[i+1].x/h[i]-Mx[i+1]*h[i]/6);
                 pry1=-My[i]*((this.pointsCtr[i+1].t-t)**2)/(2*h[i])+My[i+1]*((t-this.pointsCtr[i].t)**2)/(2*h[i])-(this.pointsCtr[i].y/h[i]-My[i]*h[i]/6)+(this.pointsCtr[i+1].y/h[i]-My[i+1]*h[i]/6);
                 prx2=Mx[i]*(this.pointsCtr[i+1].t-t)/h[i]+Mx[i+1]*(t-this.pointsCtr[i].t)/h[i];
